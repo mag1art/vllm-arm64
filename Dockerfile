@@ -18,7 +18,7 @@ RUN git clone https://github.com/vllm-project/vllm.git /vllm_source
 
 # Переходим в директорию с исходным кодом vLLM
 WORKDIR /vllm_source
-
+RUN export PIP_EXTRA_INDEX_URL="https://download.pytorch.org/whl/cpu"
 # Устанавливаем зависимости для CPU backend
 RUN pip install -v -r requirements/cpu.txt --extra-index-url https://download.pytorch.org/whl/cpu
 
