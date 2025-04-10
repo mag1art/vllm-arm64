@@ -20,7 +20,7 @@ RUN git clone https://github.com/vllm-project/vllm.git /vllm_source
 WORKDIR /vllm_source
 
 # Устанавливаем зависимости для CPU backend
-RUN pip install -v -r requirements/cpu.txt --extra-index-url https://download.pytorch.org/whl/cpu
+RUN pip install -v -r requirements/cpu.txt
 
 # Собираем и устанавливаем vLLM для CPU: флаг VLLM_TARGET_DEVICE=cpu задаёт сборку для процессора
 RUN VLLM_TARGET_DEVICE=cpu python setup.py install
